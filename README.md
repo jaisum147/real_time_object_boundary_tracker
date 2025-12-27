@@ -43,39 +43,22 @@ The system highlights object boundaries, isolates the main moving object, and vi
 3.NumPy
 (note:No deep learning models, tracking APIs, or pre-trained frameworks are used.)
 
-Setup Instructions
+>>Setup Instructions
 
-Clone the repository:
-
-git clone https://github.com/your-username/real-time-object-boundary-tracker.git
+1.Clone the repository:
+git clone https://github.com/jaisum147/real_time_object_boundary_tracker.git
 cd real-time-object-boundary-tracker
 
-
-Install required dependencies:
-
+2.Install required dependencies:
 pip install opencv-python numpy
 
-
-Run the program:
-
+3.Run the program:
 python object_tracker.py
-
-
-Press q to exit the application.
-
-Usage Notes
-
-For best results, ensure that only one object is moving prominently in the camera view.
-
+4.Press q to exit the application.
+6.Usage Notes
+-->For best results, ensure that only one object is moving prominently in the camera view.
 The system assumes the largest detected contour corresponds to the target object.
-
 Parameters such as Canny thresholds and minimum contour area can be adjusted directly in the code.
 
 Results
-
 The application runs in real time and provides smooth visualization of object boundaries and motion trajectory. The centroid path helps visualize how the object moves across consecutive frames.
-
-Originality & Attribution
-
-This project was implemented from scratch as part of a computer vision assignment using classical image processing techniques.
-OpenCV documentation and tutorials were referenced for understanding API usage, but all logic and implementation are original.
