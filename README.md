@@ -1,35 +1,81 @@
-OVERVIEW:
-This project implements a real-time computer vision system to detect and track the boundary of a moving object using a webcam. The solution follows a classical computer vision pipeline using only OpenCV and NumPy, as required. No deep learning models or high-level tracking APIs are used.The system detects object boundaries, isolates the main moving object, and visualizes its geometric properties along with its motion trajectory.
-Features:
+>>Real-Time Moving Object Boundary Tracker:
+
+-->Overview
+This project implements a real-time computer vision system to detect and track the boundary of a moving object using a webcam. The solution follows a classical computer vision approach using OpenCV and NumPy only, without any machine learning or pre-trained models.
+The system highlights object boundaries, isolates the main moving object, and visualizes its shape and motion across frames.
+
+-->Features
 1.Live webcam video processing
+
 2.Canny edge-based boundary detection
+
 3.Morphological edge stabilization
-4.Largest contour-based object isolation
-5. it also helps in the visualization of :
-      a)Object contour
-      b)Bounding box
-      c )Convex hull
-      d)Centroid trajectory across frames
->>APPROACH:
--->The tracking pipeline follows these steps:
 
-         a)Frame Acquisition:
-                       in this step video frame is capturesd using webcame of the system
-         b)Preprocessing:
-                       in this step captured frame is converted into grayscale and blurred to reduce the noise
-         c)Edge Detection:
-                       in this step boundary of the object is highlighted using canny edge detection
+4.Largest contour-based object detection
 
-         d)Edge Stabilization:
-                       here in this step Morphological closing is used to connect fragmented edges and smooth contours.
+5.Visualization of:
+   a)Object contour
+   b)Bounding box
+   c)Convex hull
+   d)Centroid trajectory (motion path)
 
-         e)Object Isolation:
-                     here in this step external contours are extracted, and the largest contour is assumed to be the moving object.
-         d)Contour Analysis & Visualization:
-                    here in this step The system draws the object’s contour, bounding box, convex hull, and tracks the centroid position over time to visualize motion.
+>>Approach
+-->The processing pipeline works as follows:
 
-TECHNOLOGIES USED HERE ARE:
--->python
--->opencv
--->numpy
+     1.Frame Acquisition:
+         Frames are captured in real time from the system webcam.
 
+     2.Preprocessing:
+         Each frame is converted to grayscale and smoothed using Gaussian blur to reduce noise.
+     3.Edge Detection:
+         Canny edge detection is applied to extract object boundaries.
+     4:Edge Stabilization
+         Morphological closing is used to connect broken edges and improve contour continuity.
+     5.Contour Detection
+         External contours are extracted, and the largest contour is assumed to represent the moving object.
+
+     6.Visualization
+         The detected object’s contour, bounding box, convex hull, and centroid trajectory are drawn directly on the video feed.
+
+>>Technologies Used
+1.Python 3
+2.OpenCV
+3.NumPy
+(note:No deep learning models, tracking APIs, or pre-trained frameworks are used.)
+
+Setup Instructions
+
+Clone the repository:
+
+git clone https://github.com/your-username/real-time-object-boundary-tracker.git
+cd real-time-object-boundary-tracker
+
+
+Install required dependencies:
+
+pip install opencv-python numpy
+
+
+Run the program:
+
+python object_tracker.py
+
+
+Press q to exit the application.
+
+Usage Notes
+
+For best results, ensure that only one object is moving prominently in the camera view.
+
+The system assumes the largest detected contour corresponds to the target object.
+
+Parameters such as Canny thresholds and minimum contour area can be adjusted directly in the code.
+
+Results
+
+The application runs in real time and provides smooth visualization of object boundaries and motion trajectory. The centroid path helps visualize how the object moves across consecutive frames.
+
+Originality & Attribution
+
+This project was implemented from scratch as part of a computer vision assignment using classical image processing techniques.
+OpenCV documentation and tutorials were referenced for understanding API usage, but all logic and implementation are original.
